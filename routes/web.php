@@ -19,3 +19,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/createschedule', 'ScheduleController@index')->name('createschedule');
+Route::post('/createschedule','ScheduleController@createschedule')->name('createschedule');

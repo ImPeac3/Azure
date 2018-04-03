@@ -8,7 +8,7 @@
                     <div class="panel-heading">Update Profile</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            @role('User')
+                            @role('Admin')
                             @if(session()->has('notif'))
                                 <div class="col-md-12 col-md-offset-0">
                                     <div class="alert alert-success">
@@ -89,7 +89,7 @@
 
                         <!--Lecturer Role-->
                         <!--Lecturer Edit Profile-->
-                        @role('Owner')
+                        @role('Agent')
                         <div class="form-group">
                             @if(session()->has('notif'))
                                 <div class="col-md-12 col-md-offset-0">
