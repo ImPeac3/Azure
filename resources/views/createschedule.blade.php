@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 @section('content')
     @role('Admin')
 <div class="container">
@@ -30,7 +31,6 @@
         <input type="text" class="form-control" name="vesselnumber" placeholder="Vessel Number" required>
     </div>
     <div class="form-group">
-
         <label>Departure Date</label>
         <input type="text" class="form-control" id="from" name="from" required>
         </span>
@@ -44,13 +44,13 @@
               <select class="form-control" name="vesselcapacity" required>
                     <option style="display:none" disabled selected value> -- Select No. Slot Available  -- </option>
                     <option value="100"> 100 </option>
-                    <option value="150"> 200 </option>
-                    <option value="200"> 300 </option>
+                    <option value="200"> 200 </option>
+                    <option value="300"> 300 </option>
               </select>
      </div>
     <div class="form-group">
         <label>Departure Location</label>
-        <select class="form-control" name="departurelocation" required>
+        <select class="form-control" id="dlocation" name="departurelocation" onchange="return locationValidation();" required>
             <option style="display:none" disabled selected value> -- Departure Location  -- </option>
                 <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
                 <option value="Johor Port (Johor)">Johor Port (Johor)</option>
@@ -74,7 +74,7 @@
     </div>
     <div class="form-group">
         <label>Arrival Location</label>
-        <select class="form-control" name="arrivallocation" required>
+        <select class="form-control" id="alocation" name="arrivallocation" onchange="return locationValidation();" required>
             <option style="display:none" disabled selected value> -- Arrival Location  -- </option>
             <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
             <option value="Johor Port (Johor)">Johor Port (Johor)</option>
@@ -107,5 +107,17 @@
 </div>
 </div>
 </div>
+    <script>
+        function markerValidation(valueToSelect){
+            var dlocation = document.getElementById('dlocation').value;
+            var alocation = document.getElementById('alocation').value;
+            if(dlocation == alocation)
+            {
+                alert('Departure and Arrival location cannot be same');
+                document.getElementById('dlocation').selectedIndex = ' -- Departure Location  --';
+                document.getElementById('alocation').selectedIndex = ' -- Arrival Location  --';
+            }
+        }
+    </script>
     @endrole
 @endsection

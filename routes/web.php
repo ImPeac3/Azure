@@ -22,3 +22,28 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/createschedule', 'ScheduleController@index')->name('createschedule');
 Route::post('/createschedule','ScheduleController@createschedule')->name('createschedule');
+
+Route::get('/addagent','RegisterController@addagentform')->name('addagent');
+Route::post('/addagent','RegisterController@addagent')->name('addagent');
+
+Route::get('/viewbooking','ScheduleController@viewbookig')->name('viewbooking');
+Route::post('/viewbooking','ScheduleController@searchbooking')->name('viewbooking');
+
+Route::get('/viewagent','AgentController@viewagent')->name('viewagent');
+Route::post('/viewagent','AgentController@searchagent')->name('viewagent');
+
+Route::get('/addcustomer','RegisterController@addcustomerform')->name('addcustomer');
+Route::post('/addcustomer','RegisterController@addcustomer')->name('addcustomer');
+
+Route::get('/registeritem','ProfileController@searchprofile')->name('registeritem');
+Route::post('/registeritem','ProfileController@updateprofile')->name('registeritem');
+
+
+Route::get('/bookvessel','ScheduleController@viewvessel')->name('bookvessel');
+Route::post('/bookvessel','ScheduleController@savebooking')->name('bookvessel');
+
+//Both User Share same edit code
+Route::get('/editprofile','ProfileController@searchprofile')->name('myprofile');
+Route::post('/editprofile','ProfileController@updateprofile')->name('myprofile');
+
+

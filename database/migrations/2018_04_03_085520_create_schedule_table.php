@@ -13,6 +13,7 @@ class CreateScheduleTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('schedules', function (Blueprint $table) {
             $table->increments('id');
             $table->string('vesselname');

@@ -11,7 +11,7 @@ use App\User;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function searchprofile()
     {
         return view('editprofile');
     }
@@ -20,30 +20,19 @@ class ProfileController extends Controller
     {
         //validation
         $request->validate([
+            'name' => 'string',
             'contact' => 'string|min:10|max:11',
+            'email' => 'string',
             'password' => 'string',
             ]);
         //save into database
         $user = User::find(Auth::id());
         $user->contact = $request->input('contact');
         $user->password = bcrypt($request->input('password'));
-        $user->interest = $request->input('interest');
+        $user->email = $request->input('email');
         $user->save();
         session()->flash('notif','Profile is successfully Updated!');
         return back();
-    }
-
-    public function searchSupervisorProfile(Request $request)
-    {
-        $input = $request->input('search');
-        $supervisors = DB::table('users')->where([['name','like','%'.$input.'%'],
-                                                 ['intake','=',null]])
-                                                  ->orwhere([['course', 'like', '%'.$input.'%'],
-                                                 ['intake','=',null]])
-                                                  ->orwhere([['interest', 'like', '%'.$input.'%'],
-                                                 ['intake','=',null]])->get();
-
-        return view('supervisorprofile',['supervisors' => $supervisors]); //get all data to the view
     }
 
 }

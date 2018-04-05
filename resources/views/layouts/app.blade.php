@@ -8,12 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Mearsk') }}</title>
+    <title>{{ config('app.name', 'Maersk') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-
 </head>
 <body>
 <div id="app">
@@ -28,7 +27,7 @@
                 </button>
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Mearsk') }}
+                    {{ config('app.name', 'Maersk') }}
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -41,8 +40,7 @@
                 @endguest
                 @role('Agent')
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/registercustomer">Register Customer</a></li>
-                    <li><a href="/registeritem">Register Item</a></li>
+                    <li><a href="/addcustomer">Register Customer</a></li>
                     <li><a href="/bookvessel">Book Vessel</a></li>
                     <li><a href="/editprofile">My Profile</a></li>
                     <li class="dropdown">

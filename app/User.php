@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','contact','password',
     ];
 
     /**
@@ -30,17 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // app/User.php
-
-    /**
-     * A user can have many messages
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function messages()
+    public function booking()
     {
-        return $this->hasMany(Message::class); //Many to many relation setup
+        return $this->hasMany(Booking::class); //Many to many relation setup
     }
-
 }
 
