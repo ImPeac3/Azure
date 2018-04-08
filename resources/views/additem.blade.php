@@ -68,19 +68,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Item Quantity</label>
-                                    <select class="form-control" name="itemquantity" required>
-                                        <option style="display:none" disabled selected value> -- Item Quantity  -- </option>
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                        <option value="6"> 6 </option>
-                                        <option value="7"> 7 </option>
-                                        <option value="8"> 8 </option>
-                                        <option value="9"> 9 </option>
-                                        <option value="10"> 10 </option>
-                                    </select>
+                                    <input type="text" class="form-control" name="itemquantity" placeholder="Item Quantity( Kg or Tonns)" required>
                                 </div>
                                 <br>
                                 <div class="form-group">
