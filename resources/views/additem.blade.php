@@ -22,6 +22,15 @@
                             <form class="form-horizontal" method="POST" action="">
                                 {{ csrf_field() }}
                                 <div class="form-group">
+                                    <label>Customer Name</label>
+                                    <select class="form-control" name="customer_id" required>
+                                        @foreach($customers as $customer)
+                                            <option style="display:none" disabled selected value> -- Select customer -- </option>
+                                            <option value="{{$customer->id}}">{{$customer->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label>Container Quantity</label>
                                     <select class="form-control" name="containerquantity" required>
                                         <option style="display:none" disabled selected value> -- Number of Container  -- </option>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
 use DB;
+use App\Role;
 use App\Schedule;
 
 class ScheduleController extends Controller
@@ -35,7 +36,7 @@ class ScheduleController extends Controller
         ]);
 
         $schedule = new Schedule;
-        $schedule->vesselname = $request->input('vesselname'); //must unique?
+        $schedule->vesselname = $request->input('vesselname');
         $schedule->vesselnumber = $request->input('vesselnumber');
         $schedule->departuredate = $request->input('from');
         $schedule->arrivaldate = $request->input('to');
@@ -74,8 +75,9 @@ class ScheduleController extends Controller
 
     public function createbooking(Request $id)
     {
+        $customers = Role::where('name','customer')->first()->users()->get();
         $data=Schedule::find($id);
-        return view('additem',['data' => $data]);
+        return view('additem',['data' => $data],['customers' =>$customers]);
     }
 
     public function savebooking(Request $request)
@@ -88,7 +90,7 @@ class ScheduleController extends Controller
         $booking->itemquantity = $request->input('itemquantity');
         $booking->itemdescription = $request->input('itemdescription');
         $booking->schedule_id = $request->input('schedule_id');
-        $booking->user_id = Auth::id();
+        $booking->user_id = $request->input('customer_id');
         $booking->save();
         session()->flash('notif','Booking Created Successfully!');
         return back();
