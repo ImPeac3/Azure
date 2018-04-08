@@ -38,9 +38,13 @@ Route::post('/addcustomer','RegisterController@addcustomer')->name('addcustomer'
 Route::get('/registeritem','ProfileController@searchprofile')->name('registeritem');
 Route::post('/registeritem','ProfileController@updateprofile')->name('registeritem');
 
-
 Route::get('/bookvessel','ScheduleController@viewvessel')->name('bookvessel');
-Route::post('/bookvessel','ScheduleController@savebooking')->name('bookvessel');
+Route::post('/bookvessel','ScheduleController@searchvessel')->name('bookvessel');
+
+Route::get('/additem','ScheduleController@createbooking')->name('additem');
+Route::post('/additem','ScheduleController@savebooking')->name('additem');
+
+Route::get('/viewbooking','ScheduleController@viewbookings')->name('viewbooking');
 
 //Both User Share same edit code
 Route::get('/editprofile','ProfileController@searchprofile')->name('myprofile');

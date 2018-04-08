@@ -16,17 +16,17 @@ class CreateBookingTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cargoquantity');
-            $table->string('cargosize');
-            $table->string('cargotype');
+            $table->string('containerquantity');
+            $table->string('containersize');
+            $table->string('containertype');
             $table->string('itemtype');
-            $table->string('itemquantity');
             $table->string('itemdescription');
+            $table->string('itemquantity');
             $table->integer('schedule_id')->nullable()->unsigned();
-            $table->foreign('schedule_id')->references('id')->on('schedule');
+            $table->foreign('schedule_id')->references('id')->on('schedules');
             $table->integer('user_id')->nullable()->unsigned();
-            $table->foreign('user_id')->references('id')->on('user');
-
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

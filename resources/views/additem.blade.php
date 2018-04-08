@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register Customer</div>
+                    <div class="panel-heading">Register Item</div>
                     <div class="panel-body">
                         <div class="form-group">
                             @if(session()->has('notif'))
@@ -22,24 +22,62 @@
                             <form class="form-horizontal" method="POST" action="">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label>Customer Name</label>
-                                    <input type="text" class="form-control" name="name" placeholder="Customer Name" required>
+                                    <label>Container Quantity</label>
+                                    <select class="form-control" name="containerquantity" required>
+                                        <option style="display:none" disabled selected value> -- Number of Container  -- </option>
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Customer Email</label>
-                                    <input type="text" class="form-control" name="email" placeholder="Customer Email" required>
+                                    <label>Container Size</label>
+                                    <select class="form-control" name="containersize" required>
+                                        <option style="display:none" disabled selected value> -- Container Size  -- </option>
+                                        <option value="S"> Small </option>
+                                        <option value="M"> Medium </option>
+                                        <option value="L"> Large </option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Customer Contact</label>
-                                    <input type="text" class="form-control" name="contact" placeholder="Customer Contact" required>
+                                    <label>Container Type</label>
+                                    <select class="form-control" name="containertype" required>
+                                        <option style="display:none" disabled selected value> -- Container Type -- </option>
+                                        <option value="Normal"> Normal </option>
+                                        <option value="Refrigerated"> Refrigerated</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Customer Password" required>
+                                    <label>Item Type</label>
+                                    <input type="text" class="form-control" name="itemtype" placeholder="Item Type" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Description</label>
+                                    <input type="text" class="form-control" name="itemdescription" placeholder="Item Description" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Quantity</label>
+                                    <select class="form-control" name="itemquantity" required>
+                                        <option style="display:none" disabled selected value> -- Item Quantity  -- </option>
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                        <option value="7"> 7 </option>
+                                        <option value="8"> 8 </option>
+                                        <option value="9"> 9 </option>
+                                        <option value="10"> 10 </option>
+                                    </select>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Register Customer</button>
+                                    @foreach($data as $datas)
+                                    <button type="submit" name="schedule_id" value="{{$datas->id}}" class="btn btn-primary">Create Booking</button>
+                                    @endforeach
                                 </div>
                             </form>
                         </div>

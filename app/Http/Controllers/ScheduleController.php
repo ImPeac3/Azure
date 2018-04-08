@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Booking;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -13,11 +14,6 @@ class ScheduleController extends Controller
     public function index()
     {
         return view('createschedule');
-    }
-
-    public function registeritem()
-    {
-        return view('registeritem');
     }
 
     public function viewvessel()
@@ -51,15 +47,50 @@ class ScheduleController extends Controller
         return back();
     }
 
-    public function viewbooking ()
+    public function viewbookings ()
     {
-        $bookings = Booking::all();
-        $customers = Booking::with('users')->where('booking_id','=',Auth::user()->id)->get();
-        return view('viewbooking',['customers' => $customers]); //get all data to the view
+        //$bookings = Booking::all();
+        $bookings = DB::table('bookings')
+            ->join('schedules', 'schedules.id', '=', 'bookings.schedule_id')
+            ->join('users', 'users.id', '=', 'bookings.user_id')
+            ->select('bookings.*', 'schedules.vesselname as vesselname',
+                'users.name as username',
+                'schedules.departuredate as ddate',
+                'schedules.arrivaldate as adate',
+                'schedules.departurelocation as dlocation',
+                'schedules.arrivallocation as alocation')
+            ->get();
+        return view('viewbooking',['bookings' => $bookings]); //get all data to the view
     }
 
-    public function saveitem()
+    public function searchvessel(Request $request)
     {
+        $schedules = DB::table('schedules')->where([['departurelocation','like','%'.$request->input('departurelocation').'%'],
+                                                    ['arrivallocation','like','%'.$request->input('arrivallocation').'%'],
+                                                    ['vesselcapacity','<>','0']])->get();
 
+        return view('vesselbooking',['schedules' => $schedules]);
+    }
+
+    public function createbooking(Request $id)
+    {
+        $data=Schedule::find($id);
+        return view('additem',['data' => $data]);
+    }
+
+    public function savebooking(Request $request)
+    {
+        $booking = new Booking;
+        $booking->containerquantity = $request->input('containerquantity'); //must unique?
+        $booking->containersize = $request->input('containersize');
+        $booking->containertype = $request->input('containertype');
+        $booking->itemtype = $request->input('itemtype');
+        $booking->itemquantity = $request->input('itemquantity');
+        $booking->itemdescription = $request->input('itemdescription');
+        $booking->schedule_id = $request->input('schedule_id');
+        $booking->user_id = Auth::id();
+        $booking->save();
+        session()->flash('notif','Booking Created Successfully!');
+        return back();
     }
 }

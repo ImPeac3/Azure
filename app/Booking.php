@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     protected $fillable = [
-        'name', 'email','contact','password',
+        'containerquantity', 'containersize','containertype','itemtype','itemdescription','itemquantity',
     ];
 
     public function user()

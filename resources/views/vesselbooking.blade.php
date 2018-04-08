@@ -20,11 +20,12 @@
                                 </div>
                         </div>
                         @endif
-                        <form class="form-horizontal" method="get" action="">
+                        <form class="form-horizontal" method="post" action="">
+                            {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-md-4">
                             <label>Departure Location</label>
-                            <select class="form-control" name="departurelocation" id="dlocation" onchange="return locationValidation();" required>
+                            <select class="form-control" name="departurelocation" id="dlocation" onchange="return locationValidation();">
                                 <option style="display:none" disabled selected value> -- Departure Location  -- </option>
                                 <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
                                 <option value="Johor Port (Johor)">Johor Port (Johor)</option>
@@ -48,7 +49,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label>Arrival Location</label>
-                                <select class="form-control" name="departurelocation" id="alocation" onchange="return locationValidation();" required>
+                                <select class="form-control" name="arrivallocation" id="alocation" onchange="return locationValidation();">
                                     <option style="display:none" disabled selected value> -- Arrival Location  -- </option>
                                     <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
                                     <option value="Johor Port (Johor)">Johor Port (Johor)</option>
@@ -73,8 +74,6 @@
                         </div>
                             <button class="btn btn-primary" type="submit">Search</button>
                         </form>
-                        <form class="form-horizontal" method="POST" action="">
-                            {{csrf_field()}}
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
@@ -85,25 +84,26 @@
                                     <th>Vessel Capacity</th>
                                     <th>Departure Location</th>
                                     <th>Arrival Location</th>
-                                    <th>Book</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 @foreach($schedules as $schedule)
                                     <tr>
-                                        <td>{{$schedule->vesselname}}</td>
-                                        <td>{{$schedule->vesselnumber}}</td>
-                                        <td>{{$schedule->departuredate}}</td>
-                                        <td>{{$schedule->arrivaldate}}</td>
-                                        <td>{{$schedule->vesselcapacity}}</td>
-                                        <td>{{$schedule->departurelocation}}</td>
-                                        <td>{{$schedule->arrivallocation}}</td>
-                                        <td>
-                                            <button type="submit" class="btn btn-success glyphicon glyphicon-globe"><strong></strong></button>
+                                        <td align="center">{{$schedule->vesselname}}</td>
+                                        <td align="center">{{$schedule->vesselnumber}}</td>
+                                        <td align="center">{{$schedule->departuredate}}</td>
+                                        <td align="center">{{$schedule->arrivaldate}}</td>
+                                        <td align="center">{{$schedule->vesselcapacity}}</td>
+                                        <td align="center">{{$schedule->departurelocation}}</td>
+                                        <td align="center">{{$schedule->arrivallocation}}</td>
+                                        <td align="center">
+                                            <a href="{{route('additem',['id'=>$schedule->id])}}" class="btn btn-success glyphicon glyphicon-globe">
+                                                <i class="fa fa-folder-open"></i>Book
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </table>
-                        </form>
                     </div>
                 </div>
             </div>
