@@ -81,7 +81,7 @@
                                     <th>Vessel Number</th>
                                     <th>Departure Date</th>
                                     <th>Arrival Date</th>
-                                    <th>Vessel Capacity</th>
+                                    <th>Slot Available</th>
                                     <th>Departure Location</th>
                                     <th>Arrival Location</th>
                                     <th>Action</th>
@@ -89,14 +89,14 @@
                                 </thead>
                                 @foreach($schedules as $schedule)
                                     <tr>
-                                        <td align="center">{{$schedule->vesselname}}</td>
-                                        <td align="center">{{$schedule->vesselnumber}}</td>
-                                        <td align="center">{{$schedule->departuredate}}</td>
-                                        <td align="center">{{$schedule->arrivaldate}}</td>
-                                        <td align="center">{{$schedule->vesselcapacity}}</td>
-                                        <td align="center">{{$schedule->departurelocation}}</td>
-                                        <td align="center">{{$schedule->arrivallocation}}</td>
-                                        <td align="center">
+                                        <td>{{$schedule->vesselname}}</td>
+                                        <td>{{$schedule->vesselnumber}}</td>
+                                        <td>{{$schedule->departuredate}}</td>
+                                        <td>{{$schedule->arrivaldate}}</td>
+                                        <td>{{$schedule->vesselcapacity}}</td>
+                                        <td>{{$schedule->departurelocation}}</td>
+                                        <td>{{$schedule->arrivallocation}}</td>
+                                        <td>
                                             <a href="{{route('additem',['id'=>$schedule->id])}}" class="btn btn-success glyphicon glyphicon-globe">
                                                 <i class="fa fa-folder-open"></i>Book
                                             </a>
