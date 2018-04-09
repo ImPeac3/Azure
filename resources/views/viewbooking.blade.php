@@ -4,7 +4,7 @@
     @role('Admin')
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Vessel Booking</div>
+                    <div class="panel-heading">Booking Details</div>
                     <div class="panel-body">
                         <!--Search-->
                         <div class="form-group">
@@ -30,6 +30,7 @@
                                 <th>Item Quantity</th>
                                 <th>Vessel Name</th>
                                 <th>Customer Name</th>
+                                <th>Slot</th>
                                 <th>Departure Date</th>
                                 <th>Arrival Date</th>
                                 <th>Departure Location</th>
@@ -47,6 +48,7 @@
                                     <td align="center">{{$booking->itemquantity}}</td>
                                     <td align="center">{{$booking->vesselname}}</td>
                                     <td align="center">{{$booking->username}}</td>
+                                    <td align="center">{{$booking->slot}}</td>
                                     <td align="center">{{$booking->ddate}}</td>
                                     <td align="center">{{$booking->adate}}</td>
                                     <td align="center">{{$booking->dlocation}}</td>

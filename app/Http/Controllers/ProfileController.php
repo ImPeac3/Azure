@@ -27,6 +27,7 @@ class ProfileController extends Controller
             ]);
         //save into database
         $user = User::find(Auth::id());
+        $user->name = $request->input('name');
         $user->contact = $request->input('contact');
         $user->password = bcrypt($request->input('password'));
         $user->email = $request->input('email');

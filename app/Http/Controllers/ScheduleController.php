@@ -58,12 +58,19 @@ class ScheduleController extends Controller
             ->join('users', 'users.id', '=', 'bookings.user_id')
             ->select('bookings.*', 'schedules.vesselname as vesselname',
                 'users.name as username',
+                'schedules.vesselcapacity as slot',
                 'schedules.departuredate as ddate',
                 'schedules.arrivaldate as adate',
                 'schedules.departurelocation as dlocation',
                 'schedules.arrivallocation as alocation')
             ->get();
         return view('viewbooking',['bookings' => $bookings]); //get all data to the view
+    }
+
+    public function viewslots()
+    {
+        $schedules = Schedule::all();
+        return view('vesselslot',['schedules' => $schedules]); //get all data to the view
     }
 
     public function searchvessel(Request $request)
@@ -94,6 +101,9 @@ class ScheduleController extends Controller
         $booking->schedule_id = $request->input('schedule_id');
         $booking->user_id = $request->input('customer_id');
         $booking->save();
+        $schedule = Schedule::find($request->input('schedule_id'));
+        $schedule->decrement('vesselcapacity', 1);
+        $schedule->save();
         $customer = User::find($request->input('customer_id'));
         Notification::route('mail',$customer['email'])->notify(new BookingInvoice());
         session()->flash('notif','Booking Created Successfully!');

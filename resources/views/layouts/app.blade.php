@@ -64,6 +64,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/createschedule">Create Schedule</a></li>
                         <li><a href="/addagent">Add Agent</a></li>
+                        <li><a href="/viewslot">Vessel Slot</a></li>
                         <li><a href="/viewbooking">View Booking</a></li>
                         <li><a href="/viewagent">View Agent</a></li>
                         <li><a href="/editprofile">My Profile</a></li>
