@@ -102,7 +102,7 @@ class ScheduleController extends Controller
         $booking->user_id = $request->input('customer_id');
         $booking->save();
         $schedule = Schedule::find($request->input('schedule_id'));
-        $schedule->decrement('vesselcapacity', 1);
+        $schedule->decrement('vesselcapacity',$request->input('containerquantity'));
         $schedule->save();
         $customer = User::find($request->input('customer_id'));
         Notification::route('mail',$customer['email'])->notify(new BookingInvoice());
