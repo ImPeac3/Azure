@@ -36,7 +36,7 @@
             @guest
                 <!-- Authentication Links -->
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                 @endguest
                 @role('Agent')
                 <ul class="nav navbar-nav navbar-right">
