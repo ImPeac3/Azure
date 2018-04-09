@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Booking;
+use App\Notifications\BookingInvoice;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -9,6 +10,8 @@ use Illuminate\Support\Facades\Session;
 use DB;
 use App\Role;
 use App\Schedule;
+use App\User;
+use Notification;
 
 class ScheduleController extends Controller
 {
@@ -50,7 +53,6 @@ class ScheduleController extends Controller
 
     public function viewbookings ()
     {
-        //$bookings = Booking::all();
         $bookings = DB::table('bookings')
             ->join('schedules', 'schedules.id', '=', 'bookings.schedule_id')
             ->join('users', 'users.id', '=', 'bookings.user_id')
@@ -92,6 +94,8 @@ class ScheduleController extends Controller
         $booking->schedule_id = $request->input('schedule_id');
         $booking->user_id = $request->input('customer_id');
         $booking->save();
+        $customer = User::find($request->input('customer_id'));
+        Notification::route('mail',$customer['email'])->notify(new BookingInvoice());
         session()->flash('notif','Booking Created Successfully!');
         return back();
     }

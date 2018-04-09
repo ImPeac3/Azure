@@ -28,7 +28,7 @@
                                 <th>Item Type</th>
                                 <th>Item Description</th>
                                 <th>Item Quantity</th>
-                                <th>Schedule Name</th>
+                                <th>Vessel Name</th>
                                 <th>Customer Name</th>
                                 <th>Departure Date</th>
                                 <th>Arrival Date</th>
