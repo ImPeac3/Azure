@@ -80,8 +80,8 @@ class RegisterController extends Controller
             'intake' => $data['intake'],
         ]);
 
-        $role_user = Role::where('name', 'User')->first();
-        $user->roles()->save($role_user);
+        $role_agent = Role::where('name', 'Agent')->first();
+        $user->roles()->save($role_agent);
         return $user;
 
     }
