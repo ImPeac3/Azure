@@ -15,8 +15,8 @@ class ScheduleTableSeeder extends Seeder
         $schedule = new Schedule;
         $schedule->vesselname = 'Pearl Point';
         $schedule->vesselnumber = '1234';
-        $schedule->departuredate = '4/13/2018';
-        $schedule->arrivaldate = '4/20/2018';
+        $schedule->departuredate = '2018/04/13';
+        $schedule->arrivaldate = '2018/04/20';
         $schedule->vesselcapacity = '100';
         $schedule->departurelocation= 'Lahad Datu Port (Sabah)';
         $schedule->arrivallocation= 'Johor Port (Johor)';
@@ -25,8 +25,8 @@ class ScheduleTableSeeder extends Seeder
         $schedule = new Schedule;
         $schedule->vesselname = 'Victoria Secret';
         $schedule->vesselnumber = '1234';
-        $schedule->departuredate = '4/13/2018';
-        $schedule->arrivaldate = '4/20/2018';
+        $schedule->departuredate = '2018/04/13';
+        $schedule->arrivaldate = '2018/04/20';
         $schedule->vesselcapacity = '100';
         $schedule->departurelocation= 'Kemaman Port (Terengganu)';
         $schedule->arrivallocation= 'Peneng Port (Peneng)';
@@ -35,8 +35,8 @@ class ScheduleTableSeeder extends Seeder
         $schedule = new Schedule;
         $schedule->vesselname = 'Tide Waves';
         $schedule->vesselnumber = '5678';
-        $schedule->departuredate = '4/21/2018';
-        $schedule->arrivaldate = '4/25/2018';
+        $schedule->departuredate = '2018/04/20';
+        $schedule->arrivaldate = '2018/04/25';
         $schedule->vesselcapacity = '200';
         $schedule->departurelocation= 'Kemaman Port (Terengganu)';
         $schedule->arrivallocation= 'Peneng Port (Peneng)';
@@ -45,8 +45,8 @@ class ScheduleTableSeeder extends Seeder
         $schedule = new Schedule;
         $schedule->vesselname = 'Kunkka Sail';
         $schedule->vesselnumber = '8888';
-        $schedule->departuredate = '5/09/2018';
-        $schedule->arrivaldate = '5/11/2018';
+        $schedule->departuredate = '2018/05/09';
+        $schedule->arrivaldate = '2018/05/13';
         $schedule->vesselcapacity = '0';
         $schedule->departurelocation= 'Rajang (Johor)';
         $schedule->arrivallocation= 'Tawau Port (Sabah)';

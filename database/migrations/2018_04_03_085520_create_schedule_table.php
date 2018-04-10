@@ -18,8 +18,8 @@ class CreateScheduleTable extends Migration
             $table->increments('id');
             $table->string('vesselname');
             $table->string('vesselnumber');
-            $table->string('departuredate');
-            $table->string('arrivaldate');
+            $table->date('departuredate');
+            $table->date('arrivaldate');
             $table->string('vesselcapacity');
             $table->string('departurelocation');
             $table->string('arrivallocation');
