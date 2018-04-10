@@ -25,11 +25,11 @@
                                     <label>Customer Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="Customer Name" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" {{ $errors->has('email') ? ' has-error' : '' }}>
                                     <label>Customer Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Customer Email" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" {{ $errors->has('contact') ? ' has-error' : '' }}>
                                     <label>Customer Contact</label>
                                     <input type="text" class="form-control" name="contact" placeholder="Customer Contact" required>
                                 </div>

@@ -25,11 +25,11 @@
                                     <label>Agent Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="Agent Name" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" {{ $errors->has('email') ? ' has-error' : '' }}>
                                     <label>Agent Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Agent Email" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" {{ $errors->has('contact') ? ' has-error' : '' }}>
                                     <label>Agent Contact</label>
                                     <input type="text" class="form-control" name="contact" placeholder="Agent Contact" required>
                                 </div>
