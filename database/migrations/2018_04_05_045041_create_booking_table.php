@@ -13,7 +13,6 @@ class CreateBookingTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('containerquantity');
