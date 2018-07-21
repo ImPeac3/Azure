@@ -42,7 +42,7 @@
      <div class="form-group">
          <label>Vessel Capacity</label>
               <select class="form-control" name="vesselcapacity" required>
-                    <option style="display:none" disabled selected value> -- Select No. Slot Available  -- </option>
+                    <option style="display:none" disabled selected value> === Number of Slots Available  == </option>
                     <option value="100"> 100 </option>
                     <option value="200"> 200 </option>
                     <option value="300"> 300 </option>
@@ -51,49 +51,29 @@
     <div class="form-group">
         <label>Departure Location</label>
         <select class="form-control" id="dlocation" name="departurelocation" onchange="return locationValidation();" required>
-            <option style="display:none" disabled selected value> -- Departure Location  -- </option>
-                <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
-                <option value="Johor Port (Johor)">Johor Port (Johor)</option>
-                <option value="Kemaman Port (Terengganu)">Kemaman Port (Terengganu)</option>
-                <option value="Kota Kinabalu Port (Sabah)">Kota Kinabalu Port (Sabah)</option>
-                <option value="Kuantan Port (Kuantan)">Kuantan Port (Kuantan)</option>
-                <option value="Kuching Port (Sarawak)">Kuching Port (Sarawak)</option>
-                <option value="Kudat Port (Sabah)">Kudat Port (Sabah)</option>
-                <option value="Kunak Port (Sabah)">Kunak Port (Sabah)</option>
-                <option value="Labuan Port (Sabah)">Labuan Port (Sabah)</option>
-                <option value="Lahad Datu Port (Sabah)">Lahad Datu Port (Sabah)</option>
-                <option value="Lumut Port (Perak)">Lumut Port (Perak)</option>
-                <option value="Miri Port (Sarawak)">Miri Port (Sarawak)</option>
-                <option value="Peneng Port (Peneng)">Peneng Port (Peneng)</option>
-                <option value="Port Klang (Selangor)">Port Klang (Selangor)</option>
-                <option value="Tanjung Pelepas (Johor)">Tanjung Pelepas (Johor)</option>
-                <option value="Rajang (Johor)">Tanjung Pelepas (Sarawak)</option>
-                <option value="Sandakan Port (Sabah)">Sandakan Port (Sabah)</option>
-                <option value="Tawau Port (Sabah)">Tawau Port (Sabah)</option>
+            <option style="display:none" disabled selected value> === Departure Location  === </option>
+            <option value="Port A">Port A</option>
+            <option value="Port B">Port B</option>
+            <option value="Port C">Port C</option>
+            <option value="Port D">Port D</option>
+            <option value="Port E">Port E</option>
+            <option value="Port F">Port F</option>
+            <option value="Port G">Port G</option>
+            <option value="Port H">Port H</option>
         </select>
     </div>
     <div class="form-group">
         <label>Arrival Location</label>
         <select class="form-control" id="alocation" name="arrivallocation" onchange="return locationValidation();" required>
-            <option style="display:none" disabled selected value> -- Arrival Location  -- </option>
-            <option value="Bintulu Port (Sarawak)">Bintulu Port (Sarawak)</option>
-            <option value="Johor Port (Johor)">Johor Port (Johor)</option>
-            <option value="Kemaman Port (Terengganu)">Kemaman Port (Terengganu)</option>
-            <option value="Kota Kinabalu Port (Sabah)">Kota Kinabalu Port (Sabah)</option>
-            <option value="Kuantan Port (Kuantan)">Kuantan Port (Kuantan)</option>
-            <option value="Kuching Port (Sarawak)">Kuching Port (Sarawak)</option>
-            <option value="Kudat Port (Sabah)">Kudat Port (Sabah)</option>
-            <option value="Kunak Port (Sabah)">Kunak Port (Sabah)</option>
-            <option value="Labuan Port (Sabah)">Labuan Port (Sabah)</option>
-            <option value="Lahad Datu Port (Sabah)">Lahad Datu Port (Sabah)</option>
-            <option value="Lumut Port (Perak)">Lumut Port (Perak)</option>
-            <option value="Miri Port (Sarawak)">Miri Port (Sarawak)</option>
-            <option value="Peneng Port (Peneng)">Peneng Port (Peneng)</option>
-            <option value="Port Klang (Selangor)">Port Klang (Selangor)</option>
-            <option value="Tanjung Pelepas (Johor)">Tanjung Pelepas (Johor)</option>
-            <option value="Rajang (Johor)">Tanjung Pelepas (Sarawak)</option>
-            <option value="Sandakan Port (Sabah)">Sandakan Port (Sabah)</option>
-            <option value="Tawau Port (Sabah)">Tawau Port (Sabah)</option>
+            <option style="display:none" disabled selected value> === Arrival Location  === </option>
+            <option value="Port A">Port A</option>
+            <option value="Port B">Port B</option>
+            <option value="Port C">Port C</option>
+            <option value="Port D">Port D</option>
+            <option value="Port E">Port E</option>
+            <option value="Port F">Port F</option>
+            <option value="Port G">Port G</option>
+            <option value="Port H">Port H</option>
         </select>
     </div>
     <br>

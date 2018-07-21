@@ -13,43 +13,43 @@ class ScheduleTableSeeder extends Seeder
     public function run()
     {
         $schedule = new Schedule;
-        $schedule->vesselname = 'Pearl Point';
-        $schedule->vesselnumber = '1234';
-        $schedule->departuredate = '2018/04/13';
-        $schedule->arrivaldate = '2018/04/20';
-        $schedule->vesselcapacity = '100';
-        $schedule->departurelocation= 'Lahad Datu Port (Sabah)';
-        $schedule->arrivallocation= 'Johor Port (Johor)';
-        $schedule->save();
-
-        $schedule = new Schedule;
-        $schedule->vesselname = 'Victoria Secret';
-        $schedule->vesselnumber = '1234';
-        $schedule->departuredate = '2018/04/13';
-        $schedule->arrivaldate = '2018/04/20';
-        $schedule->vesselcapacity = '100';
-        $schedule->departurelocation= 'Kemaman Port (Terengganu)';
-        $schedule->arrivallocation= 'Peneng Port (Peneng)';
-        $schedule->save();
-
-        $schedule = new Schedule;
-        $schedule->vesselname = 'Tide Waves';
-        $schedule->vesselnumber = '5678';
-        $schedule->departuredate = '2018/04/20';
-        $schedule->arrivaldate = '2018/04/25';
-        $schedule->vesselcapacity = '200';
-        $schedule->departurelocation= 'Kemaman Port (Terengganu)';
-        $schedule->arrivallocation= 'Peneng Port (Peneng)';
-        $schedule->save();
-
-        $schedule = new Schedule;
-        $schedule->vesselname = 'Kunkka Sail';
+        $schedule->vesselname = 'Royal Navy';
         $schedule->vesselnumber = '8888';
-        $schedule->departuredate = '2018/05/09';
-        $schedule->arrivaldate = '2018/05/13';
-        $schedule->vesselcapacity = '0';
-        $schedule->departurelocation= 'Rajang (Johor)';
-        $schedule->arrivallocation= 'Tawau Port (Sabah)';
+        $schedule->departuredate = '2018/07/01';
+        $schedule->arrivaldate = '2018/07/15';
+        $schedule->vesselcapacity = '200';
+        $schedule->departurelocation= 'Port A';
+        $schedule->arrivallocation= 'Port G';
+        $schedule->save();
+
+        $schedule = new Schedule;
+        $schedule->vesselname = 'Salamander';
+        $schedule->vesselnumber = '5253';
+        $schedule->departuredate = '2018/07/05';
+        $schedule->arrivaldate = '2018/07/20';
+        $schedule->vesselcapacity = '200';
+        $schedule->departurelocation= 'Port H';
+        $schedule->arrivallocation= 'Port D';
+        $schedule->save();
+
+        $schedule = new Schedule;
+        $schedule->vesselname = 'Flowing Glory';
+        $schedule->vesselnumber = '6256';
+        $schedule->departuredate = '2018/07/07';
+        $schedule->arrivaldate = '2018/07/14';
+        $schedule->vesselcapacity = '100';
+        $schedule->departurelocation= 'Port G';
+        $schedule->arrivallocation= 'Port B';
+        $schedule->save();
+
+        $schedule = new Schedule;
+        $schedule->vesselname = 'Majestic V';
+        $schedule->vesselnumber = '7875';
+        $schedule->departuredate = '2018/07/20';
+        $schedule->arrivaldate = '2018/07/30';
+        $schedule->vesselcapacity = '100';
+        $schedule->departurelocation= 'Port C';
+        $schedule->arrivallocation= 'Port F';
         $schedule->save();
     }
 }

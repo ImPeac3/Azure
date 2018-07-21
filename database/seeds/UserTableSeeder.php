@@ -19,25 +19,41 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->name ='Admin';
-        $user->email= 'Admin@gmail.com';
-        $user->contact= '01121298772';
-        $user->password= bcrypt('admin');
+        $user->email= 'Admin@live.com';
+        $user->contact= '0103298348';
+        $user->password= bcrypt('123456');
         $user->save();
         $user->attachRole($role_admin);
 
         $user = new User();
-        $user->name ='Agent';
-        $user->email= 'Agent@gmail.com';
-        $user->contact= '0108323590';
-        $user->password= bcrypt('agent');
+        $user->name ='AgentA';
+        $user->email= 'AgentA@live.com';
+        $user->contact= '0145829603';
+        $user->password= bcrypt('123456');
         $user->save();
         $user->attachRole($role_agent);
 
         $user = new User();
-        $user->name ='Customer';
-        $user->email= 'Customer@gmail.com';
-        $user->contact= '0163936142';
-        $user->password= bcrypt('customer');
+        $user->name ='AgentB';
+        $user->email= 'AgentB@live.com';
+        $user->contact= '0136294821';
+        $user->password= bcrypt('123456');
+        $user->save();
+        $user->attachRole($role_agent);
+
+        $user = new User();
+        $user->name ='Alvin';
+        $user->email= 'Alvin@live.com';
+        $user->contact= '0163632534';
+        $user->password= bcrypt('123456');
+        $user->save();
+        $user->attachRole($role_customer);
+
+        $user = new User();
+        $user->name ='Ben';
+        $user->email= 'Ben@live.com';
+        $user->contact= '0178823928';
+        $user->password= bcrypt('123456');
         $user->save();
         $user->attachRole($role_customer);
     }
