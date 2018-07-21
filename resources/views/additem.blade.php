@@ -31,6 +31,18 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>Item Type</label>
+                                    <input type="text" class="form-control" name="itemtype" placeholder="Item Type" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Description</label>
+                                    <input type="text" class="form-control" name="itemdescription" placeholder="Item Description" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Weight</label>
+                                    <input type="text" class="form-control" name="itemquantity" placeholder="Item Weight( Kg )" required>
+                                </div>
+                                <div class="form-group">
                                     <label>Container Quantity</label>
                                     <select class="form-control" name="containerquantity" required>
                                         <option style="display:none" disabled selected value> === Number of Container  === </option>
@@ -57,18 +69,6 @@
                                         <option value="Normal"> Normal </option>
                                         <option value="Advanced"> Advanced</option>
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Item Type</label>
-                                    <input type="text" class="form-control" name="itemtype" placeholder="Item Type" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Item Description</label>
-                                    <input type="text" class="form-control" name="itemdescription" placeholder="Item Description" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Item Quantity</label>
-                                    <input type="text" class="form-control" name="itemquantity" placeholder="Item Quantity( Kg or Tonns)" required>
                                 </div>
                                 <br>
                                 <div class="form-group">

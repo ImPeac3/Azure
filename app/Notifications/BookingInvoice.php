@@ -43,9 +43,10 @@ class BookingInvoice extends Notification
     {
         return (new MailMessage)
 
-                    ->line('Thank you for supporting Maersk Line Management System')
-                    ->line('Your booking have successed and your item will be taken with care');
-
+                    ->line('Dear customer,')
+                    ->line('Your booking is successful!')
+                    ->line('Thank you for your support.')
+                    ->line('From: Maersk Team');
     }
 
     /**
