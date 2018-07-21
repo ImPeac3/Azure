@@ -72,14 +72,14 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        {{--<a href="{{ route('register') }}">Register</a>--}}
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Maersk Container Management System
+                    <center>Maersk</center><br>
+                    Container Management System
                 </div>
             </div>
         </div>
