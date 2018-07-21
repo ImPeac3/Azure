@@ -61,10 +61,10 @@
                                     <th>Vessel Number</th>
                                     <th>Departure Date</th>
                                     <th>Arrival Date</th>
-                                    <th>Slot Available</th>
                                     <th>Departure Location</th>
                                     <th>Arrival Location</th>
-                                    <th>Action</th>
+                                    <th>To Make Booking</th>
+                                    <th>Slot Available</th>
                                 </tr>
                                 </thead>
                                 @foreach($schedules as $schedule)
@@ -73,9 +73,9 @@
                                         <td>{{$schedule->vesselnumber}}</td>
                                         <td>{{$schedule->departuredate}}</td>
                                         <td>{{$schedule->arrivaldate}}</td>
-                                        <td>{{$schedule->vesselcapacity}}</td>
                                         <td>{{$schedule->departurelocation}}</td>
                                         <td>{{$schedule->arrivallocation}}</td>
+                                        <td>{{$schedule->vesselcapacity}}</td>
                                         <td>
                                             <a href="{{route('additem',['id'=>$schedule->id])}}" class="btn btn-success glyphicon glyphicon-globe">
                                                 <i class="fa fa-folder-open"></i>Make Booking

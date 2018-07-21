@@ -55,7 +55,7 @@
                                     <select class="form-control" name="containertype" required>
                                         <option style="display:none" disabled selected value> === Container Type === </option>
                                         <option value="Normal"> Normal </option>
-                                        <option value="Refrigerated"> Refrigerated</option>
+                                        <option value="Advanced"> Advanced</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

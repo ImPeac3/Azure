@@ -47,7 +47,7 @@ Route::post('/additem','ScheduleController@savebooking')->name('additem');
 Route::get('/viewbooking','ScheduleController@viewbookings')->name('viewbooking');
 
 Route::get('/viewslot','ScheduleController@viewslots')->name('viewslot');
-//Both User Share same edit code
+
 Route::get('/editprofile','ProfileController@searchprofile')->name('myprofile');
 Route::post('/editprofile','ProfileController@updateprofile')->name('myprofile');
 
